@@ -47,11 +47,22 @@ function timer() {
         formattedHrs = hours;
     }
 
-    document.getElementById("start").style.display = "none";
+    // Update HTML
+    document.getElementById("start").style.display = "none";    // Set display none
     document.getElementById("start").innerHTML = "";
-    document.getElementById("mins").innerHTML = formattedMins;
+
+    document.getElementById("mins").innerHTML = formattedMins;  // Update Minutes and Seconds
     document.getElementById("secs").innerHTML = formattedSecs;
-    document.getElementById("pause").style.display = "block";
+
+    document.getElementById("time").style.display = "flex";    // Apply CSS
+    document.getElementById("time").style.flexDirection = "column";
+    document.getElementById("time").style.justifyContent = "center";
+    document.getElementById("time").style.alignItems = "center";
+
+    document.getElementById("time").style.animation = "swirl-in-fwd 0.6s ease-out both";    // Apply animation
+
+    document.getElementById("pause").style.display = "block";   // Set Pause button
+    document.getElementById("pause").style.animation = "bounce-in-bottom 1.1s both";    // Apply animation
 }
 
 // Play and pause 
@@ -59,19 +70,19 @@ document.getElementById("pause").addEventListener("click", function () {
 
     var btnCheck =  document.getElementById("pause").innerHTML;
 
-    if (btnCheck == `<i class="py-5 far fa-play-circle"></i>`) {
-        console.log("Hi")
-        document.getElementById("pause").innerHTML = `<i class="py-5 fas fa-pause-circle"></i>`;
+    if (btnCheck == `<i class="pt-3 py-sm-3 py-md-5 py-lg-5 far fa-play-circle fa-2x"></i>`) {
+        document.getElementById("pause").innerHTML = `<i class="pt-3 py-sm-3 py-md-5 py-lg-5 fas fa-pause-circle fa-2x"></i>`;
         clockEngine = setInterval(timer, 1000);
     }
 
     else{
         clearInterval(clockEngine);
-        document.getElementById("pause").innerHTML = `<i class="py-5 far fa-play-circle"></i>`;
+        document.getElementById("pause").innerHTML = `<i class="pt-3 py-sm-3 py-md-5 py-lg-5 far fa-play-circle fa-2x"></i>`;
     }
 })
 
 // Start Stopwatch
 document.getElementById("start").addEventListener("click", function () {
+    document.getElementById("start").style.animation = "swirl-out-bck 0.6s ease-in both";
     clockEngine = setInterval(timer, 1000);
 })
