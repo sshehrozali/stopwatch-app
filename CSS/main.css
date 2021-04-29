@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    background: linear-gradient(to right, #fc5c7d, #6a82fb); 
+}
+
+#start{
+    cursor: pointer;
+}
+
+#pause{
+    display: none;
+
+    cursor: pointer;
+}
+
+/* Media Queries */
+/* Phones and Small Screens */
+@media screen and (max-width: 768px) {
+    .cont{
+        width: 100vw;
+    }   
+}
+
+/* Medium Screens and Tablets */
+@media screen and (min-width: 768px) {
+    .cont{
+        width: 60vw;
+    }   
+}
+
+ /* Laptops and Large Screens */
+@media screen and (min-width: 1200px) {
+    .cont{
+        width: 40vw;
+    }   
+}
+
+/* Extra Large Screens */
+@media screen and (min-width: 1528px) {
+    .cont{
+        width: 512px;
+        height: 512px;
+    }   
+}
